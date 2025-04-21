@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Meu Site Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar (igual ao index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <!-- ... mesmo navbar que no index.html ... -->
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="bg-light py-3">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Galeria</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Modal (Componente básico) -->
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Nossa Galeria</h1>
+        
+        <!-- Botão para acionar modal -->
+        <div class="text-center mb-4">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                Ver instruções
+            </button>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Como usar a galeria</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Clique em qualquer imagem para ampliá-la. Use as setas para navegar entre as imagens.</p>
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle-fill"></i> Você pode baixar as imagens clicando com o botão direito sobre elas.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grade da galeria -->
+        <div class="row g-4">
+            <div class="col-md-4 col-sm-6">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal1">
+                    <img src="assets/img/gallery1.jpg" class="img-thumbnail" alt="Imagem 1">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal2">
+                    <img src="assets/img/gallery2.jpg" class="img-thumbnail" alt="Imagem 2">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal3">
+                    <img src="assets/img/gallery3.jpg" class="img-thumbnail" alt="Imagem 3">
+                </a>
+            </div>
+            <!-- Mais imagens... -->
+        </div>
+
+        <!-- Paginação (Componente básico) -->
+        <nav aria-label="Navegação de página" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link">Anterior</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Próxima</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Tooltips (Componente não mencionado no curso) -->
+    <div class="container text-center mb-5">
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip superior">
+            Tooltip acima
+        </button>
+        <button type="button" class="btn btn-secondary mx-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip lateral">
+            Tooltip direita
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip inferior">
+            Tooltip abaixo
+        </button>
+    </div>
+
+    <!-- Footer (igual ao index.html) -->
+    <footer class="bg-dark text-white py-4">
+        <!-- ... mesmo footer que no index.html ... -->
+    </footer>
+
+    <!-- Modais para imagens -->
+    <div class="modal fade" id="imageModal1" tabindex="-1" aria-hidden="true">
+        <!-- ... estrutura similar ao modal de instruções ... -->
+    </div>
+    <!-- Mais modais para imagens... -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        // Ativar tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+</body>
+</html>
